@@ -1,5 +1,3 @@
-const child_process = require("child_process");
-
 function methods(options) {
     const defaultMethods = require("../../default");
     const { package, req, peopleManager, configManager } = options;
@@ -33,8 +31,7 @@ ${params.map(t => {
         quoteThanks: ({ replace, page }) => {
             return thanks({ params: configManager.config.quotes.map(q => { return { user: q.author } }), replace, page })
         },
-        thanks,
-        configTest: ({ replace, page }) => replace(page, configManager)
+        thanks
     };
 }
 module.exports = methods;
