@@ -1,0 +1,36 @@
+<h1>minesweeper.png</h1>
+<p>minesweeper.png is a recreation of minesweeper on Discord.</p>
+<h1>How to start a new game</h1>
+<ol>
+    <li>
+        <h2>Generate a link.</h2>
+        First you need to generate a brand new game link, you can do this by either going to <a href="https://www.papaproductions.cc/minesweeper.png">https://www.papaproductions.cc/minesweeper.png</a> and copying the link after it's done loading, or you can use this little tool I made.
+        <form id="form">
+            <a id="link">The generated link will show up here.</a>
+            <button type="submit">Generate</button>
+        </form>
+    </li>
+    <li>
+        <h2>Post the link</h2>
+        Post the link anywhere on Discord. And you're done!<br>
+        <img src="./minesweeper.png-demonstration.gif">
+    </li>
+</ol>
+<h1>How to play</h1>
+<p>This game has two commands. In order to use them, you must send them as messages.</p>
+<ol>
+    <li>s/$/dx,y:$: Opens up a square. Example: s/$/d1,1:$</li>
+    <li>s/$/fx,y:$: Flags a square. Example: s/$/f2,3:$</li>
+</ol>
+!{footer:[""]}
+<script>
+    const form = document.getElementById("form");
+    const link = document.getElementById("link");
+    form.addEventListener("submit", ev => {
+        ev.preventDefault();
+        fetch("https://www.papaproductions.cc/minesweeper.png").then(res => {
+            link.href = res.url;
+            link.innerText = res.url;
+        });
+    });
+</script>

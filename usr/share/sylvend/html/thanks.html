@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="/quotes.css">
+<style>
+    .smallpfp {
+        width: 64px;
+        height: 64px;
+        border-radius: 100%;
+    }
+    .quote-container {
+        align-items: center;
+    }
+    .list {
+        list-style-type: none;
+    }
+</style>
+---
+<h1>Special thanks!!</h1>
+<p>Thanks to all of these people for letting me put their quotes in my <a href="/whoami.html">bio page</a>:</p>
+!{quoteThanks}
+<p>Thanks to:</p>
+!{thanks:[
+    {
+        "user": "arna",
+        "text": "for making potato.is-a-kitty.cat point to my website, and for finding two critical bugs related to injection (he uhh... he made this page redirect to a furry porn website.)"
+    },
+    {
+        "user": "playfull",
+        "text": "for finding out about the embed size crash with /api/suggest."
+    },
+    {
+        "user": "colti",
+        "text": "for finding out about a crash with /api/suggest that was triggered by sending erronous JSON data to said endpoint."
+    },
+    {
+        "user": "santy",
+        "text": "for coming up with <a href=\"/stuff/furryporn\">whatever the fuck this page is</a>."
+    }
+]}
+!{footer:["thank you guys ;3"]}

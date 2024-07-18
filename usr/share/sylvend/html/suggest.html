@@ -1,0 +1,45 @@
+<style>
+    #account-status {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+    }
+    .discord-acc-container {
+        background-color: var(--secondary);
+        padding: 10px;
+        border-radius: 10px;
+        width: 256px;
+    }
+    #account-status > button {
+        background-color: var(--primary);
+    }
+    .pfp {
+        width: 64px;
+        height: 64px;
+        border-radius: 100%;
+    }
+</style>
+---
+<h1>Suggestions</h1>
+<form id="suggestionform">
+    <label for="type">Type: </label>
+    <select id="type">
+        <option value="suggestion">Suggestion</option>
+        <option value="bugreport">Bug report</option>
+    </select><br>
+    <!-- FUCK email addresses. -->
+    <!-- label for="email">Email address (optional): </label>
+    <input id="email" type="email"><br -->
+    <label for="discord-acc-container">Discord account:</label>
+    <div class="discord-acc-container">
+        <div id="account-status"></div><br>
+        <a href="#" id="btnlink">Link a Discord Account...</a>
+        <p>This step is optional. If you link your Discord account I might personally reach out to you just in case I have any questions/doubts regarding your message. If you do end up linking your account, you should join <a href="https://discord.gg/NMbQtaTsNh" target="_blank">this server</a>, just to make communication easier.</p>
+    </div><br>
+    <label for="message">Message:</label><br>
+    <textarea id="message" cols="40" rows="15" required></textarea><br>
+    <button type="submit">Send</button>
+</form>
+<pre id="log"></pre>
+!{footer:[""]}
+<script src="./suggest.js"></script>

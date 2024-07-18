@@ -1,0 +1,91 @@
+<meta property="og:title" content="Pride profile picture maker">
+<meta property="og:description" content="Made for pride month 2024 :3">
+<meta property="og:image" content="https://www.papaproductions.cc/stuff/pridepfpmaker/example.png">
+<meta property="og:image:type" content="image/png">
+<style>
+    #results {
+        list-style-type: none;
+    }
+    .term {
+        background-color: #222;
+        padding: 20px;
+        border-radius: 20px;
+        margin: 5px;
+    }
+    .term > a {
+        color: #4444ff;
+    }
+    .images {
+        display: flex;
+    }
+    .image-container {
+        margin: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .image-container > button {
+        background-color: #333;
+    }
+    .image {
+        padding: 5px;
+        max-width: 128px;
+        max-height: 128px;
+        width: auto;
+        height: auto;
+    }
+    .pfp {
+        max-width: 256px;
+        max-height: 256px;
+        width: auto;
+        height: auto;
+    }
+    .example-pfp {
+        width: 256px;
+        height: 256px;
+        border-radius: 100%;
+    }
+    #canvas, input[type="range"] {
+        touch-action: none;
+    }
+    #canvas {
+        width: 512px;
+        height: 512px;
+        border-radius: 100%;
+    }
+</style>
+---
+<h1>Pride profile picture maker</h1>
+<p>Have you ever seen a profile picture like this one?</p>
+<img src="example.png" class="example-pfp">
+<address>btw, if you happen to know who made this image, please <a href="/suggest.html">let me know</a>.</address>
+<p>This tool allows you to make one of these with your own profile picture! You can use any LGBTQ+ flag, or you can upload a custom image!</p>
+<h2>Step #1. Pick the flag</h2>
+<h3>Use an LGBTQ+ flag</h3>
+<form id="searchform">
+    <input id="searchquery" placeholder="Enter search term..." required>
+    <button type="submit">Search</button><br>
+    <address>Powered by pronouns.page. Tip: Be specific. For example, if you wanna search up the pansexual flag, search up "pansexual", not "pan". Also don't specify "flag". For example, instead of looking up "gay flag", look up "gay".</address>
+</form>
+<ul id="results"></ul>
+<h3>...or upload a custom image</h3>
+<input type="file" id="flagupload">
+<h3>Selected image:</h3>
+<img id="selectedflag">
+
+<h2 id="pfpheader">Step #2. Upload your profile picture</h2>
+<input type="file" id="pfpupload">
+<h3>Selected profile picture:</h3>
+<img id="selectedpfp">
+
+<h2 id="canvasheader">Step #3. Make the final adjustments!</h2>
+
+<canvas width="1024" height="1024" id="canvas"></canvas><br>
+<label for="radius">Radius: </label>
+<input type="range" id="radius" min="0" max="1"><br>
+<label for="zoom">Zoom: </label>
+<input type="range" id="zoom" min="100" max="500" value="100"><br>
+<a id="download" download>Download image</a>
+
+!{footer:["🏳️‍🌈 Made for Pride Month 2024. This tool is experimental, make sure to report any bugs you might find <a href=\"/suggest.html\">here</a>. There's a server-side filter that blocks terms referring to \"sexualities\" that attempt to normalize criminal activity. You probably know what I'm talking about. Don't try searching them up. Like, actually."]}
+<script src="./flagringmaker.js"></script>
