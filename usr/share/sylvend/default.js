@@ -1,8 +1,8 @@
 function methods({ package, req, peopleManager }) {
     return {
         ip: ({ page, replace }) => replace(page, req.ip.startsWith("::ffff:") ? req.ip.replace("::ffff:", "") : req.ip),
-        version: ({ page, package, replace }) => replace(page, package.version),
-        info: ({ page, replace, package }) => {
+        version: ({ page, replace }) => replace(page, package.version),
+        info: ({ page, replace }) => {
             return replace(page, `\
 <h1>${package.name} info</h1>
 <h2>General Information</h2>
