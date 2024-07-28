@@ -12,5 +12,18 @@
 <ul>
     <li>Go check out <a href="https://youtube.com/@BasedLeaf">this</a> YouTube channel me and my friends made!</li>
 </ul>
-<p>All Sylveon assets, unless specified otherwise, belong to Nintendo.</p>
+<p>All Sylveon assets, unless specified otherwise, belong to Nintendo. The new <a href="/stuff/sylv-wp.jpg">background</a> does NOT belong to Nintendo as far as I know. If you know who made, be sure to <a href="/suggest.html">tell me</a>.</p>
 !{footer:["Got any suggestions? Go <a href=\"/suggest.html\">here</a>. Got any questions? Contact me on Discord! (meow.sylv). This silly lil website could not have been possible without the help of <a href=\"/thanks.html\">all of these people</a>!!", true]}
+<script>
+document.addEventListener("keydown", ev => {
+    if(ev.key.toLowerCase() !== "g") return;
+    for(let sylv of document.getElementsByClassName("sylv")) {
+        sylv.src = "/stuff/gabe.png";
+    }   
+});
+document.addEventListener("keyup", ev => {
+    for(let sylv of document.getElementsByClassName("sylv")) {
+        sylv.src = "/stuff/sylv-small.png";
+    }   
+});
+</script>
