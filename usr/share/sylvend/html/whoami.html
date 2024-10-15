@@ -10,27 +10,45 @@
         width: 20px;
         height: 16px;
     }
+    #birthday-balloons {
+        position: absolute;
+        display: none;
+        width: 128px;
+        height: 160px;
+        align-items: flex-end;
+        justify-content: space-between;
+    }
+    .center-balloon {
+        position: relative;
+        top: 16px;
+    }
 </style>
 ---
 <h1>Who am I?</h1>
 <div class="container">
     <div class="image-container">
+        <div id="birthday-balloons" title="i drew these balloons at 11:40 pm with a mouse. yippiee!!">
+            <img class="balloon" src="/stuff/red-balloon.png">
+            <img class="center-balloon" src="/stuff/green-balloon.png">
+            <img class="balloon" src="/stuff/blue-balloon.png">
+        </div>
         <img class="pfp" src="/stuff/sylveon-cropped.jpg">
         <p class="small-text">Art by <a href="https://twitter.com/siyurume">@siyurume</a> on Twitter (Thank you for helping me find the artist Foreverably!!)</p>
     </div>
     <div class="bio">
-        <p>Hii! I'm potato. I'm <span id="age">--</span> years old and I live in 🇳🇮 Nicaragua! (don't feel bad if you don't know where that is, you're not alone)</p>
+        <p>Hii! I'm potato. I'm <span id="age">--</span> years old<span id="birthday"></span> and I live in 🇳🇮 Nicaragua!</p>
         <ul>
-            <li>I'm a Linux user (i use <a href="https://archlinux.org">arch</a> btw)</li>
-            <li>I'm a programmer!! I mostly write my stuff on Node.js (and I am deeply terrified of anything that's not Node.js), in fact, this website's api was written in Node.js!!</li>
-            <li>I ocasionally play Geometry Dash (i have 1000+ hours on this silly lil cube game), my hardest is Nine Circles and I'm tryna beat Misty Mountains!!! (yes it's a massive jump shut up)</li>
-            <li>I'm a former cuber (I'm trying to get back to it cuz it was cool!!), my 3x3 pb is 20.something idk i forgor </li>
-            <li>My timezone is UTC-6 and it is currently <span id="time">00:00:00</span> over here!</li>
-            <li><img src="/stuff/biflag.svg" class="flag"></li>
+            <li>I use Linux! (<a href="https://archlinux.org/">arch</a> btw..)</li>
+            <li>I'm a <span title="I planned on writing 'coder' instead but i fucking hate that word. i despise it SO MUCH. it's just so... eughh.">programmer</span>! I write most of my stuff in JavaScript (unfortunately), but I also have some experience with Python, C, C# and PHP. <a href="https://github.com/papaproductions/sylvend">This website's backend</a> was written in Node.js!</li>
+            <li>I'm a big <a href="https://youtube.com/@YonKaGor">YonKaGor</a> fan! They're my favorite musician and you should definitely check them out!!</li>
+            <li>My timezone is UTC-6 and it is currently <span id="time">00:00:00</span> over here!<span id="correction"></span></li>
+            <li><img src="/stuff/biflag.svg" title="im bi :p" class="flag"></li>
         </ul>
     </div>
 </div>
-<h2>Here's what my friendos have to say bout me!!!</h2>
+<h1>Wanna talk to me?</h1>
+<p>For suggestions and bug reports, please go <a href="/suggest.html">here</a>. For any website related inquiries, or if you just wanna chat with me, you can add me on Discord, I go by <i>meow.sylv</i>. I'm also on Twitter/X (<a href="https://twitter.com/purrsylv">@purrsylv</a>) and on GitHub (<a href="https://github.com/papaproductions">papaproductions</a>), you can find most of this website's source there.</p>
+<h1>Here's what my friendos have to say bout me!!!</h1>
 <ul id="quotes"></ul>
 !{footer:[""]}
 <script src="./quotes.js"></script>
