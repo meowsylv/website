@@ -1,5 +1,5 @@
 {
-    "redirect_uri": "https://www.papaproductions.cc/auth/callback",
+    "redirect_uri": "https://meow.sylv.cat/auth/callback",
     "people": {
         "piwate": "1039524377345130557",
         "arna": "1010203973287940166",
@@ -17,7 +17,7 @@
         "tore": "270647709231218690",
         "colti": "664283904588644352",
         "dot": "1160895367689277450",
-        "latte": "987078376076492810"
+        "borja": "410966118170361868"
     },
     "quotes": [
         {
@@ -49,7 +49,7 @@
             "author": "unsh"
         },
         {
-            "quote": "as a potabe, i confirm, this dude is very deltarune, so much coolness, geib has a stronk, plas coll umbolenze",
+            "quote": "<code>addEventListener(QuoteLoaded){<br>print(\"potato is a real one! best code buddy\");<br>}</code>",
             "author": "gabe"
         },
         {
@@ -75,6 +75,10 @@
         {
             "quote": "i love things UNromantically<br>(btw potato cool guy i love him)",
             "author": "dot"
+        },
+        {
+            "quote": "he is a potato what do you fucking expect",
+            "author": "borja"
         }
     ],
     "errors": {
@@ -87,9 +91,27 @@
         "502": "there was a problem loading with one of the proxies!! If the cow below is not loading, sylvend is dead.",
         "503": "my website is kil"
     },
+    "blog": {
+        "path": "/usr/share/sylvend/blog",
+        "root": "https://meow.sylv.cat/",
+        "feed": {
+            "title": "potato's goofy blog",
+            "link": "https://meow.sylv.cat/blog",
+            "description": "meow"
+        },
+        "atom": {
+            "author": "potato",
+            "id": "urn:uuid:a1c1a314-43cd-4326-a75d-e43000894889"
+        },
+        "rss": {},
+        "admins": [
+            "443568221577019402"
+        ]
+    },
     "templatePath": "/usr/share/sylvend/templates",
     "template": "papaproductions.cc",
     "htmlPath": "/usr/share/sylvend/html",
+    "domainVerificationPath": "/usr/share/sylvend/domain-verification",
     "managementPath": "/usr/share/sylvend/management",
     "errorTemplatePath": "/usr/share/sylvend/error.html",
     "errorPath": "/var/www/html/errors/",

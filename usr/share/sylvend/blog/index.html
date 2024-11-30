@@ -1,0 +1,43 @@
+<style>
+    .blog-item {
+        background-color: var(--secondary);
+        padding: 10px;
+        margin: 10px;
+        gap: 10px;
+        display: flex;
+        align-items: center;
+        border-radius: 5px;
+    }
+    .thumb {
+        max-width: 96px;
+        max-height: 96px;
+        width: auto;
+        height: auto;
+    }
+    .icon {
+        width: 16px;
+        height: 16px;
+        display: inline-block;
+    }
+    #feed {
+        list-style: none;
+        padding-left: 0;
+    }
+</style>
+---
+<h1>potato's goofy blog</h1>
+
+<p>Hii!! I've made a lil blog!! It's basically the <a href="https://old.papaproductions.cc/Noticias">old news section</a> but WAY fancier, so yeah expect website news and shit</p>
+
+<img src="/stuff/rss.svg" class="icon">
+<span><a href="/blog/rss.xml">RSS</a> / <a href="/blog/atom.xml">Atom</a></span>
+
+<ul id="feed">
+{feed}
+</ul>
+<script>
+    for(let itemDate of document.getElementsByClassName("item-date")) {
+        itemDate.title = (new Date(parseInt(itemDate.id))).toLocaleString();
+    }
+</script>
+!{footer:["meow"]} 

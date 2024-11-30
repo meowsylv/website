@@ -2,7 +2,7 @@ function methods(options) {
     let timeLockIndex = -1;
     const defaultMethods = require("../../default");
     const { package, req, peopleManager, configManager, resetSearch } = options;
-
+    
     function thanks({ params, replace, page }) {
         console.log(peopleManager.ready);
         if(!peopleManager.ready) {
@@ -23,6 +23,11 @@ ${params.map(t => {
 
     return {
         ...(defaultMethods(options)),
+        migration: ({ params, replace, page }) => {
+            if(["1", "true"].includes(req.query["sylvend-migration"]?.toLowerCase())) {
+                return replace(page, "<address>(You were redirected to this page from papaproductions.cc. Welcome to meow.sylv.cat!)</address>");
+            }
+        },
         footer: ({ replace, page, params }) => {
             return replace(page, `<div class="sylv-footer">
     ${params[1] ? "" : "<a href=\"/\">Go back to main page</a>"}<span>${params[1] ? "" : ". "}${params[0]}</span><img class="sylv" src="/stuff/sylv-small.png" title="nyah!" alt="Sylveon">

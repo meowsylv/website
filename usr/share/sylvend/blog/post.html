@@ -1,0 +1,37 @@
+<style>
+    .thumb {
+        width: auto;
+        max-width: 90%;
+        max-height: 400px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+<script>const POST_UUID = "{uuid}"</script>
+---
+
+<h1>{title}</h1>
+
+<address>by {author} - !{date:{published}}</address>
+
+<img class="thumb" src="{thumb}">
+
+{content}
+
+<h2>Comments</h2>
+
+<discord-account></discord-account>
+<form id="comment-form">
+    <span id="replying-to"></span> <button id="cancel-reply" style="display: none">×</button><br>
+    <textarea id="new-comment-content" cols="80" rows="3"></textarea><br>
+    <input type="submit" value="Post comment">
+</form>
+
+<ul id="comments" class="comment-list"></ul>
+
+!{footer:["<a href=\"/blog\">Go back to blog index</a>."]}
+
+<script src="/discord.js"></script>
+<script src="/api.js"></script>
+<script src="/post.js"></script>
