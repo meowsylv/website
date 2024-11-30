@@ -27,6 +27,7 @@ ${params.map(t => {
             if(["1", "true"].includes(req.query["sylvend-migration"]?.toLowerCase())) {
                 return replace(page, "<address>(You were redirected to this page from papaproductions.cc. Welcome to meow.sylv.cat!)</address>");
             }
+            return replace(page, "");
         },
         footer: ({ replace, page, params }) => {
             return replace(page, `<div class="sylv-footer">
