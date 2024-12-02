@@ -1,5 +1,5 @@
 {
-    "redirect_uri": "http://localhost:8000/auth/callback",
+    "redirect_uri": "https://meow.sylv.cat/auth/callback",
     "people": {
         "piwate": "1039524377345130557",
         "arna": "1010203973287940166",
