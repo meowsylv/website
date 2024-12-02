@@ -1,5 +1,5 @@
 {
-    "redirect_uri": "https://meow.sylv.cat/auth/callback",
+    "redirect_uri": "http://localhost:8000/auth/callback",
     "people": {
         "piwate": "1039524377345130557",
         "arna": "1010203973287940166",
@@ -41,7 +41,7 @@
             "author": "toast"
         },
         {
-            "quote": "still hasnt 100% completed Danganronpa 1",
+            "quote": "favourite coder nerd that hops on vrchat with me sometimes",
             "author": "pusheen"
         },
         {
