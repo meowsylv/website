@@ -16,7 +16,8 @@
         "tore": "270647709231218690",
         "colti": "664283904588644352",
         "dot": "1160895367689277450",
-        "borja": "410966118170361868"
+        "borja": "410966118170361868",
+        "pusheen": "823139539807502347"
     },
     "quotes": [
         {
@@ -38,6 +39,10 @@
         {
             "quote": "hes pretty chipi chipi chapa chapa",
             "author": "toast"
+        },
+        {
+            "quote": "favourite coder nerd that hops on vrchat with me sometimes",
+            "author": "pusheen"
         },
         {
             "quote": "hola",
@@ -103,6 +108,7 @@
             "443568221577019402"
         ]
     },
+    "inboxPermsRoleId": "1215778644518113320",
     "templatePath": "/usr/share/sylvend/templates",
     "template": "papaproductions.cc",
     "htmlPath": "/usr/share/sylvend/html",

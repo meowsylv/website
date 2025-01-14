@@ -149,21 +149,3 @@ async function loadManagementQuotes() {
         quotesDiv.appendChild(li);
     }
 }
-
-async function api(endpoint, method, body) {
-    let reqData = { method };
-    if(body) {
-        reqData.body = JSON.stringify(body);
-        reqData.headers = { "Content-Type": "application/json" };
-    }
-    let res = await fetch(`/api${endpoint}`, reqData);
-    if(res.status === 204) return;
-    let data = await res.json();
-    
-    if(!res.ok) {
-        let message = `API Error ${data.errorCode}: ${data.errorMessage}`;
-        alert(message);
-        throw new Error(message);
-    }
-    return data;
-}
