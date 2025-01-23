@@ -23,6 +23,29 @@
         position: relative;
         top: 16px;
     }
+    .link-container {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        background-color: var(--secondary);
+        width: fit-content;
+        padding: 10px;
+        border-radius: 10px; 
+    }
+    a .link-container {
+        color: white;
+    }
+    .link-icon, .link-icon-round {
+        width: 32px;
+        height: 32px;
+    }
+    .link-icon-round {
+        border-radius: 100%;
+    }
+    .links {
+        display: flex;
+        gap: 5px;
+    }
 </style>
 ---
 <h1>Who am I?</h1>
@@ -33,7 +56,7 @@
             <img class="center-balloon" src="/stuff/green-balloon.png">
             <img class="balloon" src="/stuff/blue-balloon.png">
         </div>
-        <img class="pfp" src="/stuff/sylveon-cropped.jpg">
+        <img id="pfp" class="pfp" title="Click me to switch to my Discord pfp!" src="/stuff/sylveon-cropped.jpg">
         <p class="small-text">Art by <a href="https://twitter.com/siyurume">@siyurume</a> on Twitter (Thank you for helping me find the artist Foreverably!!)</p>
     </div>
     <div class="bio">
@@ -48,7 +71,25 @@
     </div>
 </div>
 <h1>Wanna talk to me?</h1>
-<p>For suggestions and bug reports, please go <a href="/suggest.html">here</a>. For any website related inquiries, or if you just wanna chat with me, you can add me on Discord, I go by <i>meow.sylv</i>. I'm also on Twitter/X (<a href="https://twitter.com/purrsylv">@purrsylv</a>) and on GitHub (<a href="https://github.com/papaproductions">papaproductions</a>), you can find most of this website's source there.</p>
+<p>For suggestions and bug reports, please go <a href="/suggest.html">here</a>. For any website related inquiries, or if you just wanna chat with me, you can add me on Discord. I'm also on Twitter/X and on GitHub, you can find most of this website's source there.</p>
+!{links:[
+    {
+        "username": "purrsylv",
+        "website": "twitter"
+    },
+    {
+        "username": "meowsylv",
+        "website": "github"
+    },
+    {
+        "username": "sylv.cat",
+        "website": "bsky"
+    },
+    {
+        "username": "meow.sylv",
+        "website": "discord"
+    }
+]}
 <h1>Here's what my friendos have to say bout me!!!</h1>
 <ul id="quotes"></ul>
 !{footer:[""]}

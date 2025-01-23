@@ -1,3 +1,22 @@
+const linkData = {
+    twitter: {
+        website: "https://twitter.com/",
+        display: "@{username}"
+    },
+    github: {
+        website: "https://github.com/",
+        display: "{username}"
+    },
+    discord: {
+        display: "{username}"
+    },
+    bsky: {
+        website: "https://bsky.app/profile/",
+        display: "@{username}",
+        square: true
+    },
+};
+
 function methods(options) {
     let timeLockIndex = -1;
     const defaultMethods = require("../../default");
@@ -33,6 +52,14 @@ ${params.map(t => {
             return replace(page, `<div class="sylv-footer">
     ${params[1] ? "" : "<a href=\"/\">Go back to main page</a>"}<span>${params[1] ? "" : ". "}${params[0]}</span><img class="sylv" src="/stuff/sylv-small.png" title="nyah!" alt="Sylveon">
 </div>`);
+        },
+        links: ({ replace, page, params }) => {
+            let output = "<div class=\"links\">\n";
+            for(let link of params) {
+                output += `    <div class="link-container"><img class="link-icon${linkData[link.website].square ? "" : "-round"}" src="/stuff/links/${link.website}.png"><${linkData[link.website].website ? `a href="${linkData[link.website].website}${link.username}"` : "span"}>${linkData[link.website].display.replace(/\{username\}/g, link.username)}</${linkData[link.website].website ? "a" : "span"}></div>\n`
+            }
+            output += "</div>";
+            return replace(page, output);
         },
         quoteThanks: ({ replace, page }) => {
             return thanks({ params: configManager.config.quotes.map(q => { return { user: q.author } }), replace, page })
