@@ -19,9 +19,21 @@ function methods({ package, req, peopleManager }) {
     <li><b>Node.js version:</b> ${process.version}</li>
 </ul>`);
         },
-        date: ({ page, replace, params }) => {
-            return replace(page, (new Date(params)).toString());
+        query: ({ page, replace, params }) => replace(page, req?.query[params?.toString()]),
+        queryDate: ({ page, replace, params }) => replace(page, new Date(parseInt(req?.query[params?.toString()])).toString()),
+        username: ({ page, replace, params }) => {
+            let user = "";
+            let auth = req?.get("Authorization");
+            if(auth?.startsWith("Basic")) {
+                let data = auth.replace(/^Basic /, "");
+                if(!data.includes(":")) {
+                    data = Buffer.from(data, "base64").toString();
+                }
+                user = data.split(":")[0];
+            }
+            return replace(page, user);
         },
+        date: ({ page, replace, params }) => replace(page, (new Date(params)).toString()),
         timeSince: ({ page, replace, params }) => {
             let currentDate = new Date();
             let date = new Date(parseInt(params));

@@ -1,21 +1,40 @@
-<h1>minesweeper.png</h1>
-<p>minesweeper.png is a recreation of minesweeper on Discord.</p>
+<h1>mines.sylv.cat</h1>
+<p>mines.sylv.cat (formerly minesweeper.png) is a recreation of minesweeper on Discord.</p>
 <h1>How to start a new game</h1>
+<h2>Embed</h2>
 <ol>
     <li>
-        <h2>Generate a link.</h2>
-        First you need to generate a brand new game link, you can do this by either going to <a href="https://www.papaproductions.cc/minesweeper.png">https://www.papaproductions.cc/minesweeper.png</a> and copying the link after it's done loading, or you can use this little tool I made.
+        <h3>Start a game</h3>
+        <p>In order to start a game, you must first send the url "https://mines.sylv.cat/new" in any Discord channel.</p>
+        <img src="./minesweeper-new.png">
+        <p>Then, it will instruct you to send a message. That message will replace the parameters in the URL with your custom parameters. For example, if you want to play on an 8x8 map with 10 mines, you would have to send something like this:</p>
+        <code>s/new/embed?init=i+love+yonkagor&amp;w=8&amp;h=8&amp;m=10</code><br>
+        <span>(Replace the "i+love+yonkagor" text with your own random string)</span>
+    </li>
+    <li>
+        <h3>Play</h3>
+        <p>Once you send the setup message, the embed will update itself with the game link. All you have to do is copy that link and paste it in a Discord channel.</p>
+        <img src="./minesweeper-embed.png">
+    </li>
+</ol>
+<h2>Image only</h2>
+<ol>
+    <li>
+        <h3>Generate a link.</h3>
+        First you need to generate a brand new game link, you can do this by either going to <a href="https://mines.sylv.cat/">mines.sylv.cat</a> and copying the link after it's done loading, or you can use this little tool I made.
         <form id="form">
             <a id="link">The generated link will show up here.</a>
             <button type="submit">Generate</button>
         </form>
     </li>
     <li>
-        <h2>Post the link</h2>
+        <h3>Post the link</h3>
         Post the link anywhere on Discord. And you're done!<br>
-        <img src="./minesweeper.png-demonstration.gif">
+        <img src="./minesweeper.png-demonstration.gif"><br>
+        <span>This GIF is no longer an accurate representation of the game's current state, I will replace it soon™</span>
     </li>
 </ol>
+</h2>
 <h1>How to play</h1>
 <p>This game has two commands. In order to use them, you must send them as messages.</p>
 <ol>
@@ -28,7 +47,7 @@
     const link = document.getElementById("link");
     form.addEventListener("submit", ev => {
         ev.preventDefault();
-        fetch("https://www.papaproductions.cc/minesweeper.png").then(res => {
+        fetch("https://mines.sylv.cat/").then(res => {
             link.href = res.url;
             link.innerText = res.url;
         });

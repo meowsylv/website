@@ -1,16 +1,20 @@
 <meta property="og:title" content="Pride profile picture maker">
-<meta property="og:description" content="Made for pride month 2024 :3">
-<meta property="og:image" content="https://www.papaproductions.cc/stuff/pridepfpmaker/example.png">
+<meta property="og:description" content="Made for pride month 2024"> <!-- yeah the colon three's gone now. what are you gonna do about it huh -->
+<meta property="og:image" content="https://meow.sylv.cat/stuff/pridepfpmaker/example.png">
 <meta property="og:image:type" content="image/png">
 <style>
-    #results {
+    #results, #selectedflags {
+        margin: 0px;
+        padding: 0px;
         list-style-type: none;
+    }
+    #results > li {
+        margin: 5px;
     }
     .term {
         background-color: var(--secondary);
         padding: 20px;
         border-radius: 20px;
-        margin: 5px;
     }
     .images {
         display: flex;
@@ -25,12 +29,16 @@
         padding: 5px;
         max-width: 128px;
         max-height: 128px;
-        width: auto;
-        height: auto;
     }
     .pfp {
         max-width: 256px;
         max-height: 256px;
+    }
+    .uploaded-img {
+        max-width: 512px;
+        max-height: 512px;
+    }
+    .selectedflag > img, .uploaded-img, .image, .pfp {
         width: auto;
         height: auto;
     }
@@ -42,44 +50,74 @@
     #canvas, input[type="range"] {
         touch-action: none;
     }
+    #bgcanvas {
+        width: 256px;
+        height: 256px;
+    }
     #canvas {
         width: 512px;
         height: 512px;
         border-radius: 100%;
+    }
+    .results-container {
+        overflow-y: scroll;
+        height: 400px;
+        border: 1px solid var(--secondary);
+    }
+    .selectedflag {
+        display: flex;
+        gap: 5px;
+        background-color: var(--secondary);
+        width: fit-content;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 5px;
+    }
+    .selectedflag > img {
+        max-width: 32px;
+        max-height: 32px;
+    }
+    #selectedflags > li {
+        display: inline-block;
     }
 </style>
 ---
 <h1>Pride profile picture maker</h1>
 <p>Have you ever seen a profile picture like this one?</p>
 <img src="example.png" class="example-pfp">
-<address>btw, if you happen to know who made this image, please <a href="/suggest.html">let me know</a>.</address>
+<address>Example art by <a href="https://twitter.com/Tandoori_PIGEON">@Tandoori_PIGEON</a> on Twitter.</address>
 <p>This tool allows you to make one of these with your own profile picture! You can use any LGBTQ+ flag, or you can upload a custom image!</p>
-<h2>Step #1. Pick the flag</h2>
+<h2>Step #1. Pick the flag(s)</h2>
 <h3>Use an LGBTQ+ flag</h3>
 <form id="searchform">
     <input id="searchquery" placeholder="Enter search term..." required>
     <button type="submit">Search</button><br>
-    <address>Powered by pronouns.page. Tip: Be specific. For example, if you wanna search up the pansexual flag, search up "pansexual", not "pan". Also don't specify "flag". For example, instead of looking up "gay flag", look up "gay".</address>
+    <address>Tip: Be specific. For example, if you wanna search up the pansexual flag, search up "pansexual", not "pan". Also don't specify "flag". For example, instead of looking up "gay flag", look up "gay".</address>
 </form>
-<ul id="results"></ul>
+<div class="results-container">
+    <ul id="results"><li>Results will show up here.</li></ul>
+</div>
 <h3>...or upload a custom image</h3>
 <input type="file" id="flagupload">
-<h3>Selected image:</h3>
-<img id="selectedflag">
-
+<h3>Selected flags:</h3>
+<canvas width="1024" height="1024" id="bgcanvas"></canvas>
+<ul id="selectedflags"></ul>
 <h2 id="pfpheader">Step #2. Upload your profile picture</h2>
 <input type="file" id="pfpupload">
 <h3>Selected profile picture:</h3>
-<img id="selectedpfp">
-
+<img id="selectedpfp" class="uploaded-img">
 <h2 id="canvasheader">Step #3. Make the final adjustments!</h2>
-
 <canvas width="1024" height="1024" id="canvas"></canvas><br>
+<button id="center">Center image</button><br>
+<label for="rounded">Rounded: </label>
+<input type="checkbox" checked id="rounded"><br>
+<label for="rounded">Rounded preview: </label>
+<input type="checkbox" checked id="roundedpreview"><br>
 <label for="radius">Radius: </label>
 <input type="range" id="radius" min="0" max="1"><br>
 <label for="zoom">Zoom: </label>
 <input type="range" id="zoom" min="100" max="500" value="100"><br>
 <a id="download" download>Download image</a>
 
-!{footer:["🏳️‍🌈 Made for Pride Month 2024. This tool is experimental, make sure to report any bugs you might find <a href=\"/suggest.html\">here</a>. There's a server-side filter that blocks terms referring to \"sexualities\" that attempt to normalize criminal activity. You probably know what I'm talking about. Don't try searching them up. Like, actually."]}
+!{footer:["🏳️‍🌈 Made for Pride Month 2024, updated in Pride Month 2025. Search results and images provided by pronouns.page. Be sure to report any bugs you might stumble upon <a href=\"/suggest.html\">here</a>. There is a keyword filter."]}
 <script src="./flagringmaker.js"></script>

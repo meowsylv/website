@@ -7,7 +7,6 @@ const newQuoteInput = document.getElementById("quote");
 const newUserForm = document.getElementById("newuser");
 const userInput = document.getElementById("name");
 const idInput = document.getElementById("id");
-const reloadAllButton = document.getElementById("reloadall");
 const restart = document.getElementById("restart");
 
 createDeleteButton(null, async () => {
