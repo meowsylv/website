@@ -41,6 +41,10 @@ function methods({ package, req, peopleManager }) {
             let c = 0;
             let currentTime = currentDate.getTime() % (24 * 60 * 60 * 1000);
             let time = date.getTime() % (24 * 60 * 60 * 1000);
+            let month = currentDate.getUTCMonth();
+            if(month < date.getUTCMonth()) {
+                month += 12;
+            }
             //oh my god what have i done
             if(currentDate.getUTCFullYear() - date.getUTCFullYear() >= 2 || (currentDate.getUTCFullYear() - date.getUTCFullYear() === 1 && (currentDate.getUTCMonth() > date.getUTCMonth() || (currentDate.getUTCMonth() === date.getUTCMonth() && (currentDate.getUTCDate() > date.getUTCDate() || (currentDate.getUTCDate() === date.getUTCDate() && currentTime >= time)))))) {
                 c = currentDate.getUTCFullYear() - date.getUTCFullYear();
@@ -49,8 +53,8 @@ function methods({ package, req, peopleManager }) {
                 }
                 label = "year";
             }
-            else if(currentDate.getUTCMonth() - date.getUTCMonth() >= 2 || currentDate.getUTCMonth() - date.getUTCMonth() === 1 && (currentDate.getUTCDate() > date.getUTCDate() || (currentDate.getUTCDate() === date.getUTCDate() && currentTime >= time))) {
-                c = currentDate.getUTCMonth() - date.getUTCMonth();
+            else if(month - date.getUTCMonth() >= 2 || currentDate.getUTCMonth() - date.getUTCMonth() === 1 && (currentDate.getUTCDate() > date.getUTCDate() || (currentDate.getUTCDate() === date.getUTCDate() && currentTime >= time))) {
+                c = month - date.getUTCMonth();
                 if(currentDate.getUTCDate() < date.getUTCDate() || (currentDate.getUTCDate() === date.getUTCDate() && currentTime < time)) {
                     c--;
                 }
